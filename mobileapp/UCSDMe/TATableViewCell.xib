@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TATableViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ilz-fY-qoG" customClass="TATableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ilz-fY-qoG" id="LU2-n9-yEB">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mre-zP-dLf">
+                        <rect key="frame" x="251" y="6" width="51" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </switch>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="POI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-43-q9G">
+                        <rect key="frame" x="20" y="11" width="29" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="jZO-43-q9G" secondAttribute="centerY" id="Db3-0S-fal"/>
+                    <constraint firstItem="mre-zP-dLf" firstAttribute="centerY" secondItem="LU2-n9-yEB" secondAttribute="centerY" id="Oxm-YB-xfB"/>
+                    <constraint firstItem="jZO-43-q9G" firstAttribute="leading" secondItem="LU2-n9-yEB" secondAttribute="leading" constant="20" id="e3Z-Pk-7BP"/>
+                    <constraint firstItem="mre-zP-dLf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jZO-43-q9G" secondAttribute="trailing" constant="8" id="gWL-gI-nuv"/>
+                    <constraint firstAttribute="trailing" secondItem="mre-zP-dLf" secondAttribute="trailing" constant="20" id="wzH-m6-gYd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="enSwitch" destination="mre-zP-dLf" id="xTm-5T-uLd"/>
+                <outlet property="nameLabel" destination="jZO-43-q9G" id="TF2-hM-Kv4"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

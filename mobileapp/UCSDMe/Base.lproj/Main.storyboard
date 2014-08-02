@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--First Person View Controller - First Person-->
+        <scene sceneID="ot8-2e-RuS">
+            <objects>
+                <viewController id="QUy-BD-bpt" customClass="TAFirstPersonViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJD-R8-nnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="dwj-tk-JGn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6" customClass="TAFirstPersonView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="QUy-BD-bpt" id="zX5-IQ-qh9"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First Person" image="crosshair" id="Z7h-1E-pvt"/>
+                    <connections>
+                        <outlet property="tapOverlayViewControllerButton" destination="Z7h-1E-pvt" id="ksJ-Wa-ier"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="-96"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Vex-rW-GRa">
+            <objects>
+                <tabBarController id="8YX-ce-x5E" customClass="TATabBarViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="JQR-rB-NYL">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="barTintColor" red="0.0" green="0.16470588235294117" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="TabBar" destination="JQR-rB-NYL" id="S6w-gD-FbC"/>
+                        <outlet property="tabBar" destination="JQR-rB-NYL" id="ex0-xl-MWt"/>
+                        <segue destination="wAm-cB-by7" kind="relationship" relationship="viewControllers" id="dWm-my-f8H"/>
+                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="6lR-Xi-0MD" kind="relationship" relationship="viewControllers" id="H85-mb-ufd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86" y="-91"/>
+        </scene>
+        <!--Map View Controller - Map-->
+        <scene sceneID="Qxa-u7-72u">
+            <objects>
+                <viewController id="6lR-Xi-0MD" customClass="TAMapViewController" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" id="aYd-8r-5V6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outlet property="delegate" destination="6lR-Xi-0MD" id="5TD-b9-mtP"/>
+                            <outletCollection property="gestureRecognizers" destination="wNL-8Z-jun" appends="YES" id="P8d-pJ-XGh"/>
+                        </connections>
+                    </mapView>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="OfJ-Ei-Ps9"/>
+                    <connections>
+                        <outlet property="longPress" destination="wNL-8Z-jun" id="bmL-rn-pN9"/>
+                        <outlet property="mapView" destination="aYd-8r-5V6" id="Po8-lD-mLh"/>
+                        <outlet property="mapViewControllerButton" destination="OfJ-Ei-Ps9" id="0Dt-yc-a0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EHo-Ar-HGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="wNL-8Z-jun">
+                    <connections>
+                        <action selector="longPressDetected:" destination="6lR-Xi-0MD" id="6A8-54-OrR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="675" y="616"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="a97-Zi-ks2">
+            <objects>
+                <tableViewController id="wAm-cB-by7" userLabel="Table View Controller" customClass="TATableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ZwY-cg-Zrq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="yqt-Th-mWz">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="wAm-cB-by7" id="Ddc-Mf-E7v"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell tag="100" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" id="e1W-tH-sHg">
+                                <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1W-tH-sHg" id="2PJ-EM-Q7o">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wAm-cB-by7" id="SG2-If-xM3"/>
+                            <outlet property="delegate" destination="wAm-cB-by7" id="76A-vl-s3B"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Find Places" image="search" id="iew-Aq-227"/>
+                    <connections>
+                        <outlet property="locationTableViewButton" destination="iew-Aq-227" id="4os-HA-muK"/>
+                        <outlet property="searchDisplayController" destination="aWN-OV-ZfJ" id="79X-oq-KSZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXy-67-rs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="aWN-OV-ZfJ">
+                    <connections>
+                        <outlet property="delegate" destination="wAm-cB-by7" id="rsp-TH-bif"/>
+                        <outlet property="searchBar" destination="yqt-Th-mWz" id="s8s-wu-s0a"/>
+                        <outlet property="searchContentsController" destination="wAm-cB-by7" id="h6Y-6c-NJw"/>
+                        <outlet property="searchResultsDataSource" destination="wAm-cB-by7" id="kpG-Fn-WcB"/>
+                        <outlet property="searchResultsDelegate" destination="wAm-cB-by7" id="oT3-Av-R5G"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="683" y="-957"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crosshair" width="25" height="25"/>
+        <image name="map" width="38" height="25"/>
+        <image name="search" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
